@@ -1,4 +1,4 @@
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/dmattek/tutorial-classify-nano/blob/main/scripts/nano-classify-numpy.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmattek/tutorial-classify-nano/blob/main/scripts/nano-classify-numpy.ipynb)
 
 # Intro
 
