@@ -9,11 +9,29 @@ The model will be evaluated on two validation sets.
 
 The tutorial is inspired by S. Zhangs's [tutorial on Kaggle](https://www.kaggle.com/code/wwsalmon/simple-mnist-nn-from-scratch-numpy-no-tf-keras) [1] and is based on [resources](#further-reading) [2]-[5].
 
+# Usage
+
+Clone the repository by clicking the green "Code" button in the upper right corner or type: 
+
+```
+git clone https://github.com/dmattek/tutorial-classify-nano.git
+```
+in the command line.
+
+Then, open the `scripts/nano-classify-numpy.ipynb` ([link](https://nbviewer.org/github/dmattek/tutorial-classify-nano/blob/db2c58c1ef7ae907c96342e39f40ca9e27ce8cbd/scripts/nano-classify-numpy.ipynb)) Jupyter notebook in your favorite editor (e.g., [Visual Studio Code](https://code.visualstudio.com), [Cursor](https://www.cursor.com)).
+
+**Alternatively**, open the notebook in Google Colab by clicking the "Open in Colab" button.
+
+
+
 # The data
 
-The input data $x^{[0]}$ comprises 24 3x3 pixel images grouped into two classes: vertical and horizontal lines. Each pixel assumes a grayscale value between 0 and 1:
+The input (training) data $x^{[0]}$ comprises 24 3x3 pixel images grouped into two classes: vertical and horizontal lines. Each pixel assumes a grayscale value between 0 and 1:
 
 ![png image](figs/training-set.png "Training set")
+
+The data is stored in a CSV file `data/lines_3x3_train.csv` ([link](https://github.com/dmattek/tutorial-classify-nano/blob/db2c58c1ef7ae907c96342e39f40ca9e27ce8cbd/data/lines_3x3_train.csv)), where each row contains pixel intensities of a single image.
+The last column determines the class of the image: 0 for vertical, 1 for horizontal lines.
 
 The image below depicts the entire batch of inputs with $M=24$ examples as columns of $N=9$ pixels corresponding to a single 3x3 pixel image:
 
@@ -248,6 +266,8 @@ The parameter optimization achieves maximum accuracy at the 68th iteration.
 
 Similar to the training set, the validation set comprises 18 3x3 pixel images with horizontal and vertical lines, where the intensity of single pixels within lines are reduced from 1 to 0.4.
 
+The validation data is stored in a CSV file `data/lines_3x3_valid_1.csv` ([link](https://github.com/dmattek/tutorial-classify-nano/blob/db2c58c1ef7ae907c96342e39f40ca9e27ce8cbd/data/lines_3x3_valid_1.csv)).
+
 ![png image](figs/valid-set1.png "Validation set 1")
 
 The model achieves accuracy 1 on this validation set.
@@ -256,6 +276,8 @@ The model achieves accuracy 1 on this validation set.
 
 The second validation set is just like the training set except pixel values have an additional Gaussian noise with mean 0 and standard deviation 0.2.
 Values are still clipped to the [0,1] range. 
+
+The validation data is stored in a CSV file `data/lines_3x3_valid_1.csv` ([link](https://github.com/dmattek/tutorial-classify-nano/blob/db2c58c1ef7ae907c96342e39f40ca9e27ce8cbd/data/lines_3x3_valid_2.csv)).
 
 ![png image](figs/valid-set2.png "Validation set 2")
 
