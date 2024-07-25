@@ -1,4 +1,5 @@
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmattek/tutorial-classify-nano/blob/main/scripts/nano-classify-numpy.ipynb)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # Intro
 
@@ -179,7 +180,7 @@ $$
 Where $R'$ is the derivative of the ReLU function:
 
 $$
-R'(x) = \frac{d \text{ReLU}(x)}{d x} = \begin{cases} 1 & \text{if $x > 0$,}\\ 0 & \text{otherwise.} \end{cases}
+R'(x) = \frac{d}{d x} \text{ReLU}(x) = \begin{cases} 1 & \text{if $x > 0$,}\\ 0 & \text{otherwise.} \end{cases}
 $$
 
 ## Updating parameters
@@ -188,10 +189,10 @@ We can now use the derivatives of the loss function to iteratively update the pa
 
 $$
 \begin{align*}
-b^{[2]} & \gets b^{[2]} &-& \alpha \, \text{d}b^{[2]} \\
-W^{[2]} & \gets W^{[2]} &-& \alpha \, \text{d}W^{[2]} \\
-b^{[1]} & \gets b^{[1]} &-& \alpha \, \text{d}b^{[1]} \\
-W^{[1]} & \gets W^{[1]} &-& \alpha \, \text{d}W^{[1]} \\
+b^{[2]} & \gets b^{[2]} &-& \alpha * \text{d}b^{[2]} \\
+W^{[2]} & \gets W^{[2]} &-& \alpha * \text{d}W^{[2]} \\
+b^{[1]} & \gets b^{[1]} &-& \alpha * \text{d}b^{[1]} \\
+W^{[1]} & \gets W^{[1]} &-& \alpha * \text{d}W^{[1]} \\
 \end{align*}
 $$
 
@@ -283,7 +284,7 @@ $$
 \mathcal{L}(S, Y) = -\sum_{i=1}^{C} y_i \log s_i
 $$
 
-where $i$ indexes all the oputput classes, $C$.
+Where $i$ indexes all the output classes, $C$.
 <!---
 Since $y_i$ is the one-hot encoded true probability, $y_i = 1$ for only a single index $i$. 
 -->
@@ -294,7 +295,8 @@ $$
 s_i = e^{x_i}/ \sum_{k=1}^{C} e^{x_k}
 $$
 
-Thus the $\log s_i$:
+Thus, the $\log s_i$:
+
 $$
 \log s_i = x_i - \log \left( \sum_{k=1}^{C} e^{x_k} \right)
 $$
