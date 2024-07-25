@@ -11,14 +11,13 @@ The tutorial is inspired by S. Zhangs's [tutorial on Kaggle](https://www.kaggle.
 
 # Usage
 
-Clone the repository by clicking the green "Code" button in the upper right corner or type: 
+Clone the repository by clicking the green "Code" button in the upper right corner or type in the command line: 
 
 ```
 git clone https://github.com/dmattek/tutorial-classify-nano.git
 ```
-in the command line.
 
-Then, open the `scripts/nano-classify-numpy.ipynb` ([link](https://nbviewer.org/github/dmattek/tutorial-classify-nano/blob/db2c58c1ef7ae907c96342e39f40ca9e27ce8cbd/scripts/nano-classify-numpy.ipynb)) Jupyter notebook in your favorite editor (e.g., [Visual Studio Code](https://code.visualstudio.com), [Cursor](https://www.cursor.com)).
+Then, open the `scripts/nano-classify-numpy.ipynb` [Jupyter notebook](https://nbviewer.org/github/dmattek/tutorial-classify-nano/blob/db2c58c1ef7ae907c96342e39f40ca9e27ce8cbd/scripts/nano-classify-numpy.ipynb) in your favorite editor (e.g., [Visual Studio Code](https://code.visualstudio.com), [Cursor](https://www.cursor.com)).
 
 **Alternatively**, open the notebook in Google Colab by clicking the "Open in Colab" button.
 
@@ -142,8 +141,9 @@ It has one local maximum and four identical local minima.
 Starting from an arbitrary point we can find one of the minima by moving along the steepest gradient.
 To achieve that we need to (1) calculate the gradients, i.e., partial derivatives with respect to all parameters and (2) find a way to iteratively update the parameters is a step-fashion.
 
-
 ![png image](figs/himmelblau-gradient.png "Gradient descent")
+
+The code for this illustration is in the `scripts/himmelblau.ipynb` [notebook](https://nbviewer.org/github/dmattek/tutorial-classify-nano/blob/f776e133731e1d3f9b3e60304ab9eff4610c2dc4/scripts/himmelblau.ipynb).
 
 ## Gradients
 
