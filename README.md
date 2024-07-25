@@ -44,7 +44,7 @@ The [softmax normalization](https://en.wikipedia.org/wiki/Softmax_function) $S$ 
 This probability distirbution will be compared to the ground truth distribution $Y$ from the labeled data.
 
 
-![svg image](figs/nn.svg "NN scheme")
+![svg image](figs/nn.png "NN scheme")
 
 The scheme drawn with [NN-SVG](https://alexlenail.me/NN-SVG/index.html).
 
@@ -53,12 +53,12 @@ The scheme drawn with [NN-SVG](https://alexlenail.me/NN-SVG/index.html).
 To calculate the output distribution $A^{[2]}$ from the input data $x^{[0]}$, we use the following equations:
 
 $$
-\begin{align}
+\begin{align*}
 z^{[1]} &= W^{[1]}  x^{[0]} + b^{[1]}\\
-A^{[1]} &= \text{ReLU}(z^{[1]})\\[6pt]
+A^{[1]} &= \text{ReLU}(z^{[1]}) \\ \\
 z^{[2]} &= W^{[2]}  A^{[1]} + b^{[2]}\\
 A^{[2]} &= S(z^{[2]})
-\end{align}
+\end{align*}
 $$
 
 Where:
@@ -78,7 +78,7 @@ $$
 The softmax function for a single element $x_i$ is given by:
 
 $$
-S(x_i) = \frac{e^{x_i}}{\sum_{k=1}^{C} e^{x_k}}
+S(x_i) = e^{x_i} / \sum_{k=1}^{C} e^{x_k}
 $$
 
 # Loss function
@@ -90,7 +90,7 @@ $$
 \mathcal{L}(S,Y) = -\sum_{i=1}^{C} y_i \log s_i
 $$
 
-Where $Y$ is the one-hot encoded vector of the ground truth classification labels, and $S$ is the output vector $A^{[2]}$ from the softmax function (Eq. 4), which in turn depends on all the weights and biases defined in Eqs. 1-3.
+Where $Y$ is the one-hot encoded vector of the ground truth classification labels, and $S$ is the output vector $A^{[2]}$ from the softmax function $S(z^{[2]})$, which in turn depends on all the weights and biases defined in equations for the forward propagation.
 The sum is over classes, which in our case goes only from 1 to 2. 
 
 In layman's terms, $\mathcal{L}$ quantifies *divergence* between two discrete probability distributions.
@@ -291,7 +291,7 @@ Since $y_i$ is the one-hot encoded true probability, $y_i = 1$ for only a single
 The softmax function for a single vector element $x_i$ is given by:
 
 $$
-s_i = \frac{e^{x_i}}{\sum_{k=1}^{C} e^{x_k}}
+s_i = e^{x_i}/ \sum_{k=1}^{C} e^{x_k}
 $$
 
 Thus the $\log s_i$:
