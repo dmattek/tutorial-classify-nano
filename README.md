@@ -12,19 +12,19 @@ The tutorial is inspired by S. Zhangs's [tutorial on Kaggle](https://www.kaggle.
 
 The input data $x^{[0]}$ comprises 24 3x3 pixel images grouped into two classes: vertical and horizontal lines. Each pixel assumes a grayscale value between 0 and 1:
 
-![png image](../figs/training-set.png "Training set")
+![png image](figs/training-set.png "Training set")
 
 The image below depicts the entire batch of inputs with $M=24$ examples as columns of $N=9$ pixels corresponding to a single 3x3 pixel image:
 
-![png image](../figs/x0.png "Input data")
+![png image](figs/x0.png "Input data")
 
 The "ground truth" vector with class labels, 0 for vertical and 1 for horizontal lines, for all examples:
 
-![png image](../figs/y.png "Labelled output")
+![png image](figs/y.png "Labelled output")
 
 Matrix $Y$ with class labels converted to [one-hot encoding](https://en.wikipedia.org/wiki/One-hot):
 
-![png image](../figs/y_enc.png "One-hot-encoded output")
+![png image](figs/y_enc.png "One-hot-encoded output")
 
 Rows correspond to the two classes. 
 The value 1 indicates the class that a particular example is lebeled with. 
@@ -44,7 +44,7 @@ The [softmax normalization](https://en.wikipedia.org/wiki/Softmax_function) $S$ 
 This probability distirbution will be compared to the ground truth distribution $Y$ from the labeled data.
 
 
-![svg image](../figs/nn.svg "NN scheme")
+![svg image](figs/nn.svg "NN scheme")
 
 The scheme drawn with [NN-SVG](https://alexlenail.me/NN-SVG/index.html).
 
@@ -124,7 +124,7 @@ Starting from an arbitrary point we can find one of the minima by moving along t
 To achieve that we need to (1) calculate the gradients, i.e., partial derivatives with respect to all parameters and (2) find a way to iteratively update the parameters is a step-fashion.
 
 
-![png image](../figs/himmelblau-gradient.png "Gradient descent")
+![png image](figs/himmelblau-gradient.png "Gradient descent")
 
 ## Gradients
 
@@ -205,7 +205,7 @@ Biases are initialized with zeros.
 This so-called Xavier initialization ensures that the mean activation across layers is zero and that the variance stays the same in every layer. 
 This prevents the gradients of the network’s activations from [vanishing or exploding](https://www.deeplearning.ai/ai-notes/initialization/index.html).
 
-![png image](../figs/mat-init.png "Initialized network")
+![png image](figs/mat-init.png "Initialized network")
 
 # Training
 
@@ -235,7 +235,7 @@ Gray scale colors are used for matrices with only positive values; black corresp
 The prediction matrix $A^{[2]}$ visualizes class probabilities calculated for every example in the input dataset. 
 Red and green dots indicate incorrect and correct predictions, respectively.
 
-![gif image](../figs/train-anim.gif "Training")
+![gif image](figs/train-anim.gif "Training")
 
 ## Observations
 
@@ -247,7 +247,7 @@ The parameter optimization achieves maximum accuracy at the 68th iteration.
 
 Similar to the training set, the validation set comprises 18 3x3 pixel images with horizontal and vertical lines, where the intensity of single pixels within lines are reduced from 1 to 0.4.
 
-![png image](../figs/valid-set1.png "Validation set 1")
+![png image](figs/valid-set1.png "Validation set 1")
 
 The model achieves accuracy 1 on this validation set.
 
@@ -256,7 +256,7 @@ The model achieves accuracy 1 on this validation set.
 The second validation set is just like the training set except pixel values have an additional Gaussian noise with mean 0 and standard deviation 0.2.
 Values are still clipped to the [0,1] range. 
 
-![png image](../figs/valid-set2.png "Validation set 2")
+![png image](figs/valid-set2.png "Validation set 2")
 
 The model achieves accuracy 1.0 on this validation set.
 
