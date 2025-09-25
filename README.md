@@ -1,5 +1,6 @@
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmattek/tutorial-classify-nano/blob/main/scripts/nano-classify-numpy.ipynb)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![DOI](https://zenodo.org/badge/833222406.svg)](https://doi.org/10.5281/zenodo.17201359)
 
 # Intro
 
